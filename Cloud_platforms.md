@@ -7,6 +7,7 @@
 * Create a new Resource Group or select an existing one.
 * Select a Location.
 * Click Package. 
+* Deployment label - sridharkey & Storage account - 
 
 Make sure that Start deployment is selected.	
 # Google Cloud Platform
