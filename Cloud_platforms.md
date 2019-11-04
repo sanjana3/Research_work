@@ -28,19 +28,21 @@ The ```ssh-keygen``` command generates public and private keys with the default 
 ### STEP3 : Connect to the Virtual Machine
 1. Select the **Connect** button on the overview page for your VM.
 ![5](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/portal-quick-start-9.png)
-
-2. In the Connect to virtual machine page, keep the default options to connect by IP address over port 22. In Login using VM local account a connection command is shown. Select the button to copy the command. The following example shows what the SSH connection command looks like:    
-                            ```ssh username@IP address ``` i.e. ```ssh azureuser@10.111.12.123```
-
+2. In the Connect to virtual machine page, keep the default options to connect by IP address over port 22. In Login using VM local account a connection command is shown. Select the button to copy the command. The following example shows what the SSH connection command looks like:    ```ssh username@IP address ``` i.e. ```ssh azureuser@10.111.12.123```
 3. Using the same bash shell you used to create your SSH key pair (you can reopen the Cloud Shell by selecting >_ again, paste the SSH connection command into the shell to create an SSH session.
 
-### STEP4 : Install a web server
-1.To see your VM running, install the NGINX web server. From your SSH session, update your package sources and then install the latest NGINX package. 
-                            ```sudo apt-get -y update```
-                            ```sudo apt-get -y install nginx```
+### STEP4 : Opening a port for jupyter
+1. After the virtual machine deploys we need to open up a security rule on the network security group. From the Azure portal, go to Network Security Groups and open the tab for the Security Group corresponding to your VM. You need to add an Inbound Security rule with the following settings: TCP for the protocol, * for the source (public) port and 9999 for the destination (private) port.
+
+
+
+### STEP5 : Install a web server
+1. To see your VM running, install the NGINX web server. From your SSH session, update your package sources and then install the latest NGINX package. ```sudo apt-get -y update```  &  ```sudo apt-get -y install nginx```.
+2. Use a web browser of your choice to view the default NGINX welcome page. Type the public IP address of the VM as the web address. The public IP address can be found on the VM overview page or as part of the SSH connection string you used earlier.
+
 
 Helpful links:
-1. https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json
+* https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json
 
 
 
