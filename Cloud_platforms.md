@@ -33,9 +33,21 @@ The ```ssh-keygen``` command generates public and private keys with the default 
 
 ### STEP4 : Opening a port for jupyter
 1. After the virtual machine deploys we need to open up a security rule on the network security group. From the Azure portal, go to Network Security Groups and open the tab for the Security Group corresponding to your VM. You need to add an Inbound Security rule with the following settings: TCP for the protocol, * for the source (public) port and 9999 for the destination (private) port.
-
+![6](https://github.com/rgl/azure-content/raw/master/articles/virtual-machines/media/virtual-machines-linux-jupyter-notebook/azure-add-endpoint.png)
 2. While in your Network Security Group, click on Network Interfaces and note the Public IP Address as it will be needed to connect to your VM in the next step.
 #### Installing Anaconda3 2.3.0 64-bit on Ubuntu for jupyter
+
+![7](https://github.com/rgl/azure-content/raw/master/articles/virtual-machines/media/virtual-machines-linux-jupyter-notebook/anaconda-install.png)
+``` pwd 
+    mkdir -p anaconda
+    cd anaconda/
+    curl -O https://repo.continuum.io/archive/Anaconda3-5.0.1-Linux-x86_64.sh
+    bash Anaconda3-5.0.1-Linux-x86_64.sh
+``` 
+
+# Update Jupyter to the latest install and generate its config file
+sudo /anaconda3/bin/conda install jupyter -y
+/anaconda3/bin/jupyter-notebook --generate-config
 
 
 ### STEP5 : Install a web server
