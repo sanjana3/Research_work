@@ -24,14 +24,14 @@ The ```ssh-keygen``` command generates public and private keys with the default 
 2. Choose **Create a resource** in the upper left corner of the Azure portal. In **Popular**, select **Ubuntu Server 18.04 LTS**.
 3. In the **Basics** tab, under **Project details**, make sure the correct subscription is selected and then choose to **Create new** under **Resource group**. Type *myResourceGroup* for the name of the resource group and then choose **OK**.
 ![1](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/project-details.png)
-4.Under Instance details, type myVM for the Virtual machine name and choose East US for your Region. Leave the other defaults.
+4.Under Instance details, type *myVM* for the Virtual machine name and choose East US for your Region. Leave the other defaults.
 ![2](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/instance-details.png)
 5.Under Administrator account, select SSH public key, type your user name, then paste in your public key. Remove any leading or trailing white space in your public key.
 ![3](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/administrator-account.png)
 6.Under Inbound port rules > Public inbound ports, choose Allow selected ports and then select SSH (22) and HTTP (80) from the drop-down.
 ![4](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/inbound-port-rules.png)
-7.Leave the remaining defaults and then select the Review + create button at the bottom of the page.
-8. On the Create a virtual machine page, you can see the details about the VM you are about to create. When you are ready, select Create. It will take a few minutes for your VM to be deployed. 
+7.Leave the remaining defaults and then select the **Review + create** button at the bottom of the page.
+8.On the Create a virtual machine page, you can see the details about the VM you are about to create. When you are ready, select Create. It will take a few minutes for your VM to be deployed. 
 
 
 
