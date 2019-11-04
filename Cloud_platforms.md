@@ -2,6 +2,7 @@
 
 # Microsoft Azure
 * Create a storage account on Azure portal
+  * Follow steps from the manual https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=azure-portal
 * Log in to the Azure portal.
 * Click Create a resource > Compute, and then scroll down to and click Cloud Service.
 * In the new Cloud Service pane, enter a value for the DNS name.
