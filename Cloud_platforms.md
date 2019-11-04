@@ -27,6 +27,7 @@ The ```ssh-keygen``` command generates public and private keys with the default 
 
 
 
+
 Make sure that Start deployment is selected.	
 # Google Cloud Platform
 a.	Google Collab is similar as Azure Notebooks
