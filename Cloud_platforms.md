@@ -22,13 +22,11 @@ The ```ssh-keygen``` command generates public and private keys with the default 
 1. Sign in to Azure portal
 2. Choose **Create a resource** in the upper left corner of the Azure portal. In **Popular**, select **Ubuntu Server 18.04 LTS**.
 3. In the **Basics** tab, under **Project details**, make sure the correct subscription is selected and then choose to **Create new** under **Resource group**. Type *myResourceGroup* for the name of the resource group and then choose **OK**.
+![1](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/project-details.png)
 
 
 
 
-
-
-Make sure that Start deployment is selected.	
 # Google Cloud Platform
 a.	Google Collab is similar as Azure Notebooks
 # Amazon Web Services
