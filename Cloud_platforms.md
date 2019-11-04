@@ -2,11 +2,6 @@
 
 # Microsoft Azure
 
-ssh sanjana@104.211.55.56
-104.211.55.56
-
-https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh
-
 * Create a linux virtual machine using Azure portal
 
  Azure virtual machines can be created through the Azure portal. The Azure portal is a browser-based user interface to create Azure   resources. This quickstart shows you how to use the Azure portal to deploy a Linux virtual machine running Ubuntu 18.04 LTS. 
@@ -19,22 +14,28 @@ https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh
 The ```ssh-keygen``` command generates public and private keys with the default name of id_rsa in the ```~/.ssh``` directory. The command returns the full path to the public key. Use the path to the public key to display its contents with cat by typing ```cat ~/.ssh/id_rsa.pub```. 
 * Copy the output of this command and save it somewhere to use later in this article. This is your public key and you will need it when configuring your administrator account to log in to your VM.
 
-### Create virtual machine
+### Create a virtual machine
 1. Sign in to Azure portal
 2. Choose **Create a resource** in the upper left corner of the Azure portal. In **Popular**, select **Ubuntu Server 18.04 LTS**.
 3. In the **Basics** tab, under **Project details**, make sure the correct subscription is selected and then choose to **Create new** under **Resource group**. Type *myResourceGroup* for the name of the resource group and then choose **OK**.
 ![1](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/project-details.png)
-4.Under Instance details, type *myVM* for the Virtual machine name and choose East US for your Region. Leave the other defaults.
+4. Under Instance details, type *myVM* for the Virtual machine name and choose East US for your Region. Leave the other defaults.
 ![2](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/instance-details.png)
-5.Under **Administrator account**, select SSH public key, type your user name, then paste in your public key. Remove any leading or trailing white space in your public key.
+5. Under **Administrator account**, select SSH public key, type your user name, then paste in your public key. Remove any leading or trailing white space in your public key.
 ![3](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/administrator-account.png)
-6.Under **Inbound port rules > Public inbound ports**, choose Allow selected ports and then select SSH (22) and HTTP (80) from the drop-down.
+6. Under **Inbound port rules > Public inbound ports**, choose Allow selected ports and then select SSH (22) and HTTP (80) from the drop-down.
 ![4](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/inbound-port-rules.png)
-7.Leave the remaining defaults and then select the **Review + create** button at the bottom of the page.
+7. Leave the remaining defaults and then select the **Review + create** button at the bottom of the page.
 
-8.On the Create a virtual machine page, you can see the details about the VM you are about to create. When you are ready, select Create. It will take a few minutes for your VM to be deployed. 
+8. On the Create a virtual machine page, you can see the details about the VM you are about to create. When you are ready, select Create. It will take a few minutes for your VM to be deployed. 
 
+### Connect to the Virtual Machine
+1. Select the **Connect** button on the overview page for your VM.
+![5](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/portal-quick-start-9.png)
 
+2. In the Connect to virtual machine page, keep the default options to connect by IP address over port 22. In Login using VM local account a connection command is shown. Select the button to copy the command. The following example shows what the SSH connection command looks like:     ```ssh username@IP address ``` example ```ssh sanjana@104.211.55.56```
+
+3. Using the same bash shell you used to create your SSH key pair (you can reopen the Cloud Shell by selecting >_ again, paste the SSH connection command into the shell to create an SSH session.
 
 
 # Google Cloud Platform
