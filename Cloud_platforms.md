@@ -1,20 +1,16 @@
-# Cloud Platforms
+# Microsoft Azure VM setup 
 
-# Microsoft Azure
-
-* Create a linux virtual machine using Azure portal
-
- Azure virtual machines can be created through the Azure portal. The Azure portal is a browser-based user interface to create Azure   resources. This quickstart shows you how to use the Azure portal to deploy a Linux virtual machine running Ubuntu 18.04 LTS. 
+Azure virtual machines can be created through the Azure portal. The Azure portal is a browser-based user interface to create Azure   resources. This quickstart shows you how to use the Azure portal to deploy a Linux virtual machine running Ubuntu 18.04 LTS. 
  
 * If you don't have an Azure subscription, create a free account before you begin.
-### Create SSH key pair 
+### STEP1 : Create SSH key pair 
 * You need an SSH key pair to complete this quickstart. If you already have an SSH key pair, you can skip this step. Open a bash shell and use ssh-keygen to create an SSH key pair. If you don't have a bash shell on your local computer, you can use the Azure Cloud Shell.
 * Sign in to the Azure portal. In the menu at the top of the page, select the ```>_``` icon to open Cloud Shell. Make sure the CloudShell says Bash in the upper left. If it says PowerShell, use the drop-down to select Bash and select Confirm to change to the Bash shell.
 * Type ```ssh-keygen -t rsa -b 2048``` to create the ssh key.You will be prompted to enter a file in which to save the key pair. Just press Enter to save in the default location, listed in brackets.You will be asked to enter a passphrase. You can type a passphrase for your SSH key or press Enter to continue without a passphrase.
 The ```ssh-keygen``` command generates public and private keys with the default name of id_rsa in the ```~/.ssh``` directory. The command returns the full path to the public key. Use the path to the public key to display its contents with cat by typing ```cat ~/.ssh/id_rsa.pub```. 
 * Copy the output of this command and save it somewhere to use later in this article. This is your public key and you will need it when configuring your administrator account to log in to your VM.
 
-### Create a virtual machine
+### STEP2 : Create a virtual machine
 1. Sign in to Azure portal
 2. Choose **Create a resource** in the upper left corner of the Azure portal. In **Popular**, select **Ubuntu Server 18.04 LTS**.
 3. In the **Basics** tab, under **Project details**, make sure the correct subscription is selected and then choose to **Create new** under **Resource group**. Type *myResourceGroup* for the name of the resource group and then choose **OK**.
@@ -29,13 +25,23 @@ The ```ssh-keygen``` command generates public and private keys with the default 
 
 8. On the Create a virtual machine page, you can see the details about the VM you are about to create. When you are ready, select Create. It will take a few minutes for your VM to be deployed. 
 
-### Connect to the Virtual Machine
+### STEP3 : Connect to the Virtual Machine
 1. Select the **Connect** button on the overview page for your VM.
 ![5](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/media/quick-create-portal/portal-quick-start-9.png)
 
-2. In the Connect to virtual machine page, keep the default options to connect by IP address over port 22. In Login using VM local account a connection command is shown. Select the button to copy the command. The following example shows what the SSH connection command looks like:     ```ssh username@IP address ``` example ```ssh sanjana@104.211.55.56```
+2. In the Connect to virtual machine page, keep the default options to connect by IP address over port 22. In Login using VM local account a connection command is shown. Select the button to copy the command. The following example shows what the SSH connection command looks like:    
+                            ```ssh username@IP address ``` i.e. ```ssh azureuser@10.111.12.123```
 
 3. Using the same bash shell you used to create your SSH key pair (you can reopen the Cloud Shell by selecting >_ again, paste the SSH connection command into the shell to create an SSH session.
+
+### STEP4 : Install a web server
+1.To see your VM running, install the NGINX web server. From your SSH session, update your package sources and then install the latest NGINX package. 
+                            ```sudo apt-get -y update```
+                            ```sudo apt-get -y install nginx```
+
+Helpful links:
+1. https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json
+
 
 
 # Google Cloud Platform
