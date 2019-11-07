@@ -57,17 +57,26 @@ The ```ssh-keygen``` command generates public and private keys with the default 
     rm -rf anaconda/
 
     # Update Jupyter to the latest install and generate its config file
-    sudo /anaconda3/bin/conda install jupyter -y
-    /anaconda3/bin/jupyter-notebook --generate-config
+    sudo anaconda3/bin/conda install jupyter -y
+    anaconda3/bin/jupyter-notebook --generate-config
 ``` 
 ![7](https://github.com/rgl/azure-content/raw/master/articles/virtual-machines/media/virtual-machines-linux-jupyter-notebook/anaconda-install.png)
 
 #### Configuring Jupyter and using SSL
+``` cd ~/.jupyter
+    
+    # To create SSL certificate(Linux & Windows)
+    openssl req -x509 -nodes -days 365 -newkey rsa:1024 -keyout mycert.pem -out mycert.pem
+    
+    # To set a password protecting
+    anaconda3/bin/python -c "import IPython;print(IPython.lib.passwd())"
+    
+    # To run jupyter
+    anaconda3/bin/jupyter-notebook
+    
+```
 
 
-### STEP5 : Install a web server
-1. To see your VM running, install the NGINX web server. From your SSH session, update your package sources and then install the latest NGINX package. ```sudo apt-get -y update```  &  ```sudo apt-get -y install nginx```.
-2. Use a web browser of your choice to view the default NGINX welcome page. Type the public IP address of the VM as the web address. The public IP address can be found on the VM overview page or as part of the SSH connection string you used earlier.
 
 
 Helpful links:
