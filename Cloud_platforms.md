@@ -78,13 +78,8 @@ The ```ssh-keygen``` command generates public and private keys with the default 
 
 
 
-
 Helpful links:
 * https://github.com/rgl/azure-content/blob/master/articles/virtual-machines/virtual-machines-linux-jupyter-notebook.md
 * https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal?toc=%2Fazure%2Fvirtual-machines%2Flinux%2Ftoc.json
 * https://www.digitalocean.com/community/tutorials/how-to-install-the-anaconda-python-distribution-on-ubuntu-16-04
 
-
-# Google Cloud Platform
-a.	Google Collab is similar as Azure Notebooks
-# Amazon Web Services
