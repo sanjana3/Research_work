@@ -4,3 +4,6 @@
 
 ### Step2 : Create a new project
 * Click on the three dots shown in the image below and then click on the + sign to create a new project.
+
+### Step 3 : Create a VM instance
+* Click on the three lines on the upper left corner, then on the compute option, click on ‘Compute Engine’
